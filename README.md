@@ -36,9 +36,10 @@
 
 * Upgrade or install the Prometheus chart in the prometheus namespace, and set the storage class for both the Alertmanager and the Prometheus server to gp2 <br>
 ```
-helm upgrade -i prometheus prometheus-community/prometheus \
+helm install prometheus prometheus-community/prometheus \
     --namespace prometheus \
-    --set alertmanager.persistentVolume.storageClass=“gp2”,server.persistentVolume.storageClass=“gp2”
+    --set alertmanager.persistentVolume.storageClass="gp2" \
+    --set server.persistentVolume.storageClass="gp2"
 ```
 <br>
 ![image](https://user-images.githubusercontent.com/31238382/234111062-36cdbad1-af0f-442e-a664-e7999f78695a.png)
